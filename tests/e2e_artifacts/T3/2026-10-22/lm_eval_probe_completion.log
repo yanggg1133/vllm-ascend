@@ -1,0 +1,131 @@
+pretrained=/root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206
+        appears to be an instruct or chat variant but chat template is not applied. Recommend setting `apply_chat_template` (optionally
+        `fewshot_as_multiturn`).
+[W1023 08:54:30.312741110 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+INFO 10-23 08:54:33 [__init__.py:52] Available plugins for group vllm.platform_plugins:
+INFO 10-23 08:54:33 [__init__.py:54] - ascend -> vllm_ascend:register
+INFO 10-23 08:54:33 [__init__.py:57] All plugins in this group will be loaded. Set `VLLM_PLUGINS` to control which plugins to load.
+INFO 10-23 08:54:33 [__init__.py:237] Platform plugin ascend is activated
+INFO 10-23 08:54:33 [platform.py:61] Breakable cudagraph is force disabled on Ascend because DeepSeek V4 PIECEWISE cudagraph is not supported yet.
+2026-10-23 08:54:40,082 - 1334166 - ServiceProfiler - INFO - VLLM_USE_V1 not set, auto-detected via vLLM 0.26.0+empty: default 1
+INFO 10-23 08:54:40 [__init__.py:112] Registered model loader `<class 'vllm_ascend.model_loader.netloader.netloader.ModelNetLoaderElastic'>` with load format `netloader`
+INFO 10-23 08:54:40 [__init__.py:112] Registered model loader `<class 'vllm_ascend.model_loader.rfork.rfork_loader.RForkModelLoader'>` with load format `rfork`
+INFO 10-23 08:54:40 [api_utils.py:273] non-default args: {'trust_remote_code': True, 'dtype': 'bfloat16', 'seed': 1234, 'max_model_len': 8192, 'tensor_parallel_size': 2, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'hf_overrides': {'architectures': ['LlamaForCausalLM']}, 'enforce_eager': True, 'model': '/root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206'}
+INFO 10-23 08:54:40 [model.py:623] Resolved architecture: LlamaForCausalLM
+INFO 10-23 08:54:40 [model.py:1788] Using max model len 8192
+INFO 10-23 08:54:40 [scheduler.py:252] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 10-23 08:54:40 [vllm.py:1109] Asynchronous scheduling is enabled.
+WARNING 10-23 08:54:40 [vllm.py:1163] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 10-23 08:54:40 [vllm.py:1213] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 10-23 08:54:40 [kernel.py:295] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+INFO 10-23 08:54:40 [vllm.py:1392] Cudagraph is disabled under eager mode
+INFO 10-23 08:54:40 [utils.py:174] No quantization signature detected from model files for "/root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206". The model will be loaded as float. To force a quantization method, pass "--quantization <method>" explicitly.
+WARNING 10-23 08:54:40 [platform.py:1061] GPU-specific parameter is not supported on Ascend. parameter=disable_cascade_attn, value=True, action: resetting to False.
+INFO 10-23 08:54:40 [ascend_config.py:921] Dynamic EPLB is False
+INFO 10-23 08:54:40 [ascend_config.py:922] The number of redundant experts is 0
+INFO 10-23 08:54:40 [platform.py:484] Compilation disabled, using eager mode by default
+INFO 10-23 08:54:40 [utils.py:1275] Block size is set to 128 if prefix cache or chunked prefill is enabled.
+INFO 10-23 08:54:40 [platform.py:785] Set PYTORCH_NPU_ALLOC_CONF=expandable_segments:True
+INFO 10-23 08:54:40 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+You are using the default legacy behaviour of the IQuestCoderTokenizer. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+WARNING 10-23 08:54:40 [registry.py:242] Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+WARNING 10-23 08:54:41 [warnings.py:112] /usr/local/python3.12.13/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=1334166) is multi-threaded, use of fork() may lead to deadlocks in the child.
+(EngineCore pid=1334423) INFO 10-23 08:54:41 [core.py:116] Initializing a V1 LLM engine (v0.26.0) with config: model='/root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206', speculative_config=None, tokenizer='/root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=True, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=npu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=1234, served_model_name=/root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'vllm_ascend.compilation.compiler_interface.AscendCompiler', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+(EngineCore pid=1334423) INFO 10-23 08:54:41 [multiproc_executor.py:140] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=199.93.55.68 (local), world_size=2, local_world_size=2
+(EngineCore pid=1334423) WARNING 10-23 08:54:41 [warnings.py:112] /usr/local/python3.12.13/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=1334423) is multi-threaded, use of fork() may lead to deadlocks in the child.
+(Worker pid=1334441) INFO 10-23 08:54:44 [parallel_state.py:1615] world_size=2 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:41733 backend=hccl
+(Worker pid=1334443) INFO 10-23 08:54:44 [parallel_state.py:1615] world_size=2 rank=1 local_rank=1 distributed_init_method=tcp://127.0.0.1:41733 backend=hccl
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+(Worker pid=1334441) INFO 10-23 08:54:44 [parallel_state.py:1946] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[rank0]:[W1023 08:54:44.517885990 NPUCachingAllocator.cpp:202] Warning: The current CANN and HDK(driver) versions require processing for 32 padding size, with memory allocation. (function operator())
+[rank1]:[W1023 08:54:44.518648100 NPUCachingAllocator.cpp:202] Warning: The current CANN and HDK(driver) versions require processing for 32 padding size, with memory allocation. (function operator())
+(Worker_TP1 pid=1334443) INFO 10-23 08:54:45 [model_runner_v1.py:3614] Starting to load model /root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206...
+(Worker_TP0 pid=1334441) INFO 10-23 08:54:45 [model_runner_v1.py:3614] Starting to load model /root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206...
+(Worker_TP0 pid=1334441) INFO 10-23 08:54:49 [weight_utils.py:869] Filesystem type for checkpoints: OVERLAY. Checkpoint size: 74.12 GiB. Available RAM: 1880.26 GiB.
+(Worker_TP0 pid=1334441) INFO 10-23 08:54:49 [weight_utils.py:892] Auto-prefetch is disabled because the filesystem (OVERLAY) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(Worker_TP0 pid=1334441) Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+(Worker_TP0 pid=1334441) Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:04<00:04,  4.35s/it]
+(Worker_TP0 pid=1334441) Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:09<00:00,  4.73s/it]
+(Worker_TP0 pid=1334441) Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:09<00:00,  4.68s/it]
+(Worker_TP0 pid=1334441) 
+(Worker_TP1 pid=1334443) INFO 10-23 08:54:59 [model_runner_v1.py:3710] Loading model weights took 37.1562 GB
+(Worker_TP1 pid=1334443) INFO 10-23 08:54:59 [model_runner_v1.py:3742] Model runner load_model total time: 14.33 seconds
+(Worker_TP0 pid=1334441) INFO 10-23 08:54:59 [default_loader.py:430] Loading weights took 10.36 seconds
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:00 [model_runner_v1.py:3710] Loading model weights took 37.1562 GB
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:00 [model_runner_v1.py:3742] Model runner load_model total time: 15.77 seconds
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:05 [worker.py:598] Available KV cache memory: 13.46 GiB
+(EngineCore pid=1334423) INFO 10-23 08:55:05 [kv_cache_utils.py:2177] GPU KV cache size: 88,192 tokens
+(EngineCore pid=1334423) INFO 10-23 08:55:05 [kv_cache_utils.py:2178] Maximum concurrency for 8,192 tokens per request: 10.77x
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:06 [kernel_warmup.py:41] Starting Triton kernel warmup.
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:06 [kernel_warmup.py:33] rejection_sampler Triton warmup complete in 0.000s.
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:06 [kernel_warmup.py:41] Starting Triton kernel warmup.
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:06 [kernel_warmup.py:33] rejection_sampler Triton warmup complete in 0.000s.
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:06 [kernel_warmup.py:33] penalties Triton warmup complete in 0.025s.
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:06 [kernel_warmup.py:33] rms Triton warmup complete in 0.000s.
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:06 [kernel_warmup.py:49] Triton kernel warmup finished in 0.026s.
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:06 [worker.py:819] Free memory on device (61.12/61.28 GiB) on startup. Desired GPU memory utilization is (0.85, 52.09 GiB). Actual usage: 37.16 GiB for weights, 0.96 GiB for peak activation, 0.5 GiB for non-torch memory, 0.0 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=14306838220` (13.32 GiB) to fit into requested memory, or `--kv-cache-memory=24003545600` (22.36 GiB) to fully utilize NPU free memory. Current KV cache memory: 13.47 GiB. After warmup: torch reserved memory 50.92 GiB, torch allocated memory 50.7 GiB.
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:06 [kernel_warmup.py:33] penalties Triton warmup complete in 0.032s.
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:06 [kernel_warmup.py:33] rms Triton warmup complete in 0.000s.
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:06 [kernel_warmup.py:49] Triton kernel warmup finished in 0.032s.
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:06 [worker.py:819] Free memory on device (60.89/61.27 GiB) on startup. Desired GPU memory utilization is (0.85, 52.08 GiB). Actual usage: 37.16 GiB for weights, 0.96 GiB for peak activation, 0.5 GiB for non-torch memory, 0.0 GiB for NPU graph memory. Replace gpu_memory_utilization with `--kv-cache-memory=14297696768` (13.32 GiB) to fit into requested memory, or `--kv-cache-memory=23754865152` (22.12 GiB) to fully utilize NPU free memory. Current KV cache memory: 13.46 GiB. After warmup: torch reserved memory 50.92 GiB, torch allocated memory 50.7 GiB.
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:08 [cpu_binding.py:543] [cpu_bind_mode] mode=global_slice rank=1 visible_npus=[0, 1]
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:08 [cpu_binding.py:627] The CPU allocation plan is as follows:
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:08 [cpu_binding.py:641] NPU1: main=[322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520 521 522 523 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540 541 542 543 544 545 546 547 548 549 550 551 552 553 554 555 556 557 558 559 560 561 562 563 564 565 566 567 568 569 570 571 572 573 574 575 576 577 578 579 580 581 582 583 584 585 586 587 588 589 590 591 592 593 594 595 596 597 598 599 600 601 602 603 604 605 606 607 608 609 610 611 612 613 614 615 616 617 618 619 620 621 622 623 624 625 626 627 628 629 630 631 632 633 634 635 636 637]  acl=[638]  release=[[639]]
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:08 [cpu_binding.py:543] [cpu_bind_mode] mode=global_slice rank=0 visible_npus=[0, 1]
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:08 [cpu_binding.py:627] The CPU allocation plan is as follows:
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:08 [cpu_binding.py:641] NPU0: main=[2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317]  acl=[318]  release=[[319]]
+(Worker_TP1 pid=1334443) INFO 10-23 08:55:08 [cpu_binding.py:667] [migrate] NPU:1 -> NUMA [4]
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:08 [cpu_binding.py:667] [migrate] NPU:0 -> NUMA [0]
+(EngineCore pid=1334423) INFO 10-23 08:55:08 [core.py:347] init engine (profile, create kv cache, warmup model) took 7.54 s
+(EngineCore pid=1334423) WARNING 10-23 08:55:08 [vllm.py:1163] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=1334423) WARNING 10-23 08:55:08 [vllm.py:1213] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=1334423) INFO 10-23 08:55:08 [kernel.py:295] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(EngineCore pid=1334423) INFO 10-23 08:55:08 [vllm.py:1392] Cudagraph is disabled under eager mode
+(EngineCore pid=1334423) INFO 10-23 08:55:08 [utils.py:174] No quantization signature detected from model files for "/root/.cache/huggingface/hub/models--IQuestLab--IQuest-Coder-V1-40B-Instruct/snapshots/265a7cba7dc0a9cec7a9e8f3f1f7dc873acee206". The model will be loaded as float. To force a quantization method, pass "--quantization <method>" explicitly.
+(EngineCore pid=1334423) INFO 10-23 08:55:08 [platform.py:484] Compilation disabled, using eager mode by default
+(EngineCore pid=1334423) INFO 10-23 08:55:08 [platform.py:785] Set PYTORCH_NPU_ALLOC_CONF=expandable_segments:True
+WARNING 10-23 08:55:09 [registry.py:242] Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 841.78it/s]
+Running generate_until requests:   0%|          | 0/3 [00:00<?, ?it/s]
+Rendering prompts:   0%|          | 0/3 [00:00<?, ?it/s][ARendering prompts: 100%|██████████| 3/3 [00:00<00:00, 92.02it/s]
+
+Processed prompts:   0%|          | 0/3 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A
+Processed prompts:  33%|███▎      | 1/3 [00:01<00:03,  1.91s/it, est. speed input: 56.46 toks/s, output: 7.32 toks/s][A
+Processed prompts:  67%|██████▋   | 2/3 [00:14<00:08,  8.06s/it, est. speed input: 18.14 toks/s, output: 10.16 toks/s][A
+Processed prompts: 100%|██████████| 3/3 [00:26<00:00,  9.89s/it, est. speed input: 15.18 toks/s, output: 14.88 toks/s][A
+Processed prompts: 100%|██████████| 3/3 [00:26<00:00,  9.89s/it, est. speed input: 15.18 toks/s, output: 14.88 toks/s][AProcessed prompts: 100%|██████████| 3/3 [00:26<00:00,  8.78s/it, est. speed input: 15.18 toks/s, output: 14.88 toks/s]
+Running generate_until requests:  33%|███▎      | 1/3 [00:26<00:52, 26.39s/it]Running generate_until requests: 100%|██████████| 3/3 [00:26<00:00,  8.80s/it]
+(EngineCore pid=1334423) INFO 10-23 08:55:50 [core.py:1313] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=1334423) INFO 10-23 08:55:50 [core.py:1432] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=1334423) INFO 10-23 08:55:50 [core.py:1463] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=1334423) INFO 10-23 08:55:50 [core.py:1326] [shutdown] EngineCore: exiting busy loop
+(EngineCore pid=1334423) INFO 10-23 08:55:50 [multiproc_executor.py:429] [shutdown] Executor: waiting for worker exit count=2
+(Worker_TP0 pid=1334441) INFO 10-23 08:55:50 [multiproc_executor.py:793] Parent process exited, terminating worker queues
+(EngineCore pid=1334423) INFO 10-23 08:55:54 [multiproc_executor.py:436] [shutdown] Executor: all workers exited gracefully
+WARNING 10-23 08:55:55 [utils.py:626] [shutdown] Process manager: force killing remaining processes count=1
+RESULTS: {
+ "name": "humaneval",
+ "alias": "humaneval",
+ "sample_len": 3,
+ "pass@1,create_test": 1.0,
+ "pass@1_stderr,create_test": 0.0
+}
+RAW RESP: '    # Sort the list to make it easier to find close elements\n    sorted_numbers = sorted(numbers)\n    \n    # Check each adjacent pair in the sorted list\n    for i in range(len(sorted_numbers) - 1):\n        if sorted_numbers[i + 1] - sorted_numbers[i] < threshold:\n            return True\n            '
+FILTERED : ['from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    """ Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    """\n    # Sort the list to make it easier to find close elements\n    sorted_numbers = sorted(numbers)\n    \n    # Check each adjacent pair in the sorted list\n    for i in range(len(sorted_numbers) - 1):\n        if sorted_numbers[i + 1] - sorted_numbers[i] < threshold:\n            return True\n            \n    return False\n\n']
+RAW RESP: "    groups = []\n    current_group = []\n    balance = 0\n\n    for char in paren_string:\n        if char == ' ':\n            continue\n        \n        current_group.append(char)\n        \n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n            \n   "
+FILTERED : ['from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    """ Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups(\'( ) (( )) (( )( ))\')\n    [\'()\', \'(())\', \'(()())\']\n    """\n    groups = []\n    current_group = []\n    balance = 0\n\n    for char in paren_string:\n        if char == \' \':\n            continue\n        \n        current_group.append(char)\n        \n        if char == \'(\':\n            balance += 1\n        elif char == \')\':\n            balance -= 1\n            \n        if balance == 0 and current_group:\n            groups.append("".join(current_group))\n            current_group = []\n            \n    return groups\n']
+RAW RESP: '    return number - int(number)\n\n'
+FILTERED : ['\n\ndef truncate_number(number: float) -> float:\n    """ Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    """\n    return number - int(number)\n\n']
