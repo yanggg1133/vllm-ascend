@@ -1,0 +1,31 @@
+/opt/aisbench/ais_bench/benchmark/registry.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[W1024 01:45:04.760069370 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+10/24 01:45:12 - AISBench - INFO - Current exp folder: /vllm-workspace/vllm-ascend/tests/e2e_artifacts/T3/2026-10-22/aisbench_gsm8klite_iquest_rerun2/20261024_014512
+10/24 01:45:13 - AISBench - INFO - Starting inference tasks...
+10/24 01:45:13 - AISBench - INFO - Partitioned into 1 tasks.
+10/24 01:45:13 - AISBench - INFO - Continuous batch enable! All the logs and processes for each task should be checked in each infer/.out file.
+Processing tasks:   0%|          | 0/1 [00:00<?, ?it/s]                                                       Processing tasks:   0%|          | 0/1 [00:00<?, ?it/s]Launch OpenICLInfer[vllm-api-stream-chat-iquest/gsm8klite] on CPU 
+Processing tasks: 100%|██████████| 1/1 [43:16<00:00, 2596.04s/it]Processing tasks: 100%|██████████| 1/1 [43:16<00:00, 2596.04s/it]
+Launch OpenICLInfer[vllm-api-stream-chat-iquest/gsm8klite] on CPU 
+10/24 02:28:29 - AISBench - INFO - Inference tasks completed.
+10/24 02:28:31 - AISBench - INFO - Starting evaluation tasks...
+10/24 02:28:31 - AISBench - INFO - Partitioned into 1 tasks.
+  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:11<00:00, 11.79s/it]100%|██████████| 1/1 [00:11<00:00, 11.80s/it]
+launch OpenICLEval[vllm-api-stream-chat-iquest/gsm8klite] on CPU 
+10/24 02:28:43 - AISBench - INFO - Evaluation tasks completed.
+10/24 02:28:43 - AISBench - INFO - Summarizing evaluation results...
+dataset    version    metric    mode      vllm-api-stream-chat-iquest
+---------  ---------  --------  ------  -----------------------------
+gsm8klite  7cd45e     accuracy  gen                             88.00
+10/24 02:28:43 - AISBench - INFO - write summary to /vllm-workspace/vllm-ascend/tests/e2e_artifacts/T3/2026-10-22/aisbench_gsm8klite_iquest_rerun2/20261024_014512/summary/summary_20261024_014512.txt
+10/24 02:28:43 - AISBench - INFO - write csv to /vllm-workspace/vllm-ascend/tests/e2e_artifacts/T3/2026-10-22/aisbench_gsm8klite_iquest_rerun2/20261024_014512/summary/summary_20261024_014512.csv
+
+
+The markdown format results is as below:
+
+| dataset | version | metric | mode | vllm-api-stream-chat-iquest |
+|----- | ----- | ----- | ----- | -----|
+| gsm8klite | 7cd45e | accuracy | gen | 88.00 |
+
+10/24 02:28:43 - AISBench - INFO - write markdown summary to /vllm-workspace/vllm-ascend/tests/e2e_artifacts/T3/2026-10-22/aisbench_gsm8klite_iquest_rerun2/20261024_014512/summary/summary_20261024_014512.md
